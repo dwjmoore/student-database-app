@@ -6,18 +6,18 @@ public class Student {
 	private int classYear;
 	private String studentID;
 	private String courses;
-	private int tuitionBalance;
+	private int tuitionBalance = 0;
 	private static int costOfCourse = 600;
 	private static int id = 1000;
 
 	Scanner scanner = new Scanner(System.in);
-	
+
 	// Constructor to prompt user to enter name and year
 	public Student() {
 		enterName();
 		enterClassYear();
 		setStudentID();
-		System.out.println(firstName + " " + lastName + " " + classYear + " " + studentID);
+		showStudentStatus();
 	}
 
 	// method to prompt user to enter name
@@ -40,15 +40,21 @@ public class Student {
 
 	// method to create Student ID
 	private void setStudentID() {
-		studentID = classYear + "" + id;
+		studentID = Integer.toString(classYear) + Integer.toString(id);
 		id++;
 	}
 
 	// method for student to enroll in courses
 
 	// method for student to see tuition balance
+	private void printTuitionBalance() {
+		System.out.printf("Tuition Balance: %,d\n", tuitionBalance);
+	}
 
 	// method for student to pay tuition balance
 
 	// Show status
+	private void showStudentStatus() {
+		System.out.println(firstName + " " + lastName + " " + classYear + " " + studentID);
+	}
 }
