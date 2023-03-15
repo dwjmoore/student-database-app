@@ -70,4 +70,16 @@ public class Student {
 	private void showStudentStatus() {
 		System.out.println(firstName + " " + lastName + " " + classYear + " " + studentID);
 	}
+
+	private int getNextIntFromUser() {
+		while (!scanner.hasNextInt()) {
+			System.out.print("Invalid entry. Please try again. ");
+			scanner.nect();
+		}
+		return scanner.nextInt();
+	}
+
+	private String getNextLineFromUser() {
+		return scanner.nextLine();
+	}
 }
