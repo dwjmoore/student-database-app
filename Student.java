@@ -17,6 +17,7 @@ public class Student {
 		enterName();
 		enterClassYear();
 		setStudentID();
+		enrollInCourses();
 		showStudentStatus();
 	}
 
@@ -45,6 +46,18 @@ public class Student {
 	}
 
 	// method for student to enroll in courses
+	private void enrollInCourses() {
+		
+		printCourses();
+	}
+
+	// method to print course list
+	private void printCourses() {
+		System.out.println("--Courses--");
+		for (Courses course : Courses.values()) {
+			System.out.println(course.getID() + ": " + course.getDisplayValue());
+		}
+	}
 
 	// method for student to see tuition balance
 	private void printTuitionBalance() {
