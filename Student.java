@@ -4,10 +4,11 @@ public class Student {
 	private String firstName;
 	private String lastName;
 	private int classYear;
-	private int studentID;
+	private String studentID;
 	private String courses;
 	private int tuitionBalance;
-	private int costOfCourse = 600;
+	private static int costOfCourse = 600;
+	private static int id = 1000;
 
 	Scanner scanner = new Scanner(System.in);
 	
@@ -15,7 +16,8 @@ public class Student {
 	public Student() {
 		enterName();
 		enterClassYear();
-		System.out.println(firstName + " " + lastName + " " + classYear);
+		setStudentID();
+		System.out.println(firstName + " " + lastName + " " + classYear + " " + studentID);
 	}
 
 	// method to prompt user to enter name
@@ -37,6 +39,10 @@ public class Student {
 	}
 
 	// method to create Student ID
+	private void setStudentID() {
+		studentID = classYear + "" + id;
+		id++;
+	}
 
 	// method for student to enroll in courses
 
